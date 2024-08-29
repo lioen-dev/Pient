@@ -239,7 +239,7 @@ def install():
     package = input(color + "Enter package name (type 'back' to exit) : " + end)
     if package == "back":
         main()
-    os.system(f"pip install {package}")
+    os.system(f"pip install {package} --user")
     clear()
     n()
     print(color + "Package installed successfully!" + end)
