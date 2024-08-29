@@ -168,7 +168,7 @@ def settings():
             print(color + "3. Settings" + end)
             print(color + "4. Back" + end)
             n()
-            choice = input("Enter your choice: ")
+            choice = input(color + "Enter your choice: " + end)
             try:
                 choice = int(choice)
                 if choice < 1 or choice > 4:
@@ -236,7 +236,9 @@ def install():
     clear()
     print(color + "Install Package" + end)
     n()
-    package = input(color + "Enter package name: " + end)
+    package = input(color + "Enter package name (type 'back' to exit) : " + end)
+    if package == "back":
+        main()
     os.system(f"pip install {package}")
     clear()
     n()
@@ -248,7 +250,9 @@ def remove():
     clear()
     print(color + "Remove Package" + end)
     n()
-    package = input(color + "Enter package name: " + end)
+    package = input(color + "Enter package name (type 'back' to exit) : " + end)
+    if package == "back":
+        main()
     os.system(f"pip uninstall {package}")
     clear()
     n()
@@ -267,7 +271,17 @@ def listpackages():
 
 def main():
     clear()
-    print(color + italic + "Welcome to pient!" + end)
+    print(color + 
+"8888888b.  d8b                   888                                       \n"
+"888   Y88b Y8P                   888           ∖∖                          \n"
+"888    888                       888           (o>  //                     \n"
+"888   d88P 888  .d88b.  88888b.  888888        / \ <o)                     \n"
+"8888888P   888 d8P  Y8b 888  88b 888        ___\_v_())__                   \n"
+"888        888 88888888 888  888 888            || ||                      \n"
+"888        888 Y8b.     888  888 Y88b.          ||                         \n"
+"888        888  Y8888   888  888  Y888                                     \n" + end)
+
+    print(color + "The first pip client. Made by barker.rowan@sugarsalem.com" + end)
     n()
     print(color + "1. Install Package" + end)
     print(color + "2. Remove Package" + end)
@@ -302,8 +316,9 @@ def main():
         print(color + "Exiting pient... Have a great day!" + end)
         n()
         time.sleep(1)
-        exit()
+        sys.exit()
 
+clear()
 print("Initializing...")
 
 if not os.path.exists("config.ini"):
