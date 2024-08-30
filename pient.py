@@ -2,6 +2,15 @@ import os
 import configparser
 import time
 import sys
+import random
+import terminaltexteffects
+from terminaltexteffects.effects.effect_middleout import MiddleOut
+from terminaltexteffects.effects.effect_print import Print
+from terminaltexteffects.effects.effect_fireworks import Fireworks
+from terminaltexteffects.effects.effect_slide import Slide
+from terminaltexteffects.effects.effect_synthgrid import SynthGrid
+from terminaltexteffects.effects.effect_errorcorrect import ErrorCorrect
+from terminaltexteffects.utils.graphics import Color
 import pip
 
 end      = '\33[0m'
@@ -20,6 +29,66 @@ def n():
 
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
+
+def MiddleOutEffect():
+    effect = MiddleOut("8888888b.  d8b                   888                                       \n888   Y88b Y8P                   888            ))                         \n888    888                       888           (o>  //                     \n888   d88P 888  .d88b.  88888b.  888888        / \ <o)                     \n8888888P   888 d8P  Y8b 888  88b 888        ___\_v_())__                   \n888        888 88888888 888  888 888            || ||                      \n888        888 Y8b.     888  888 Y88b.          ||                         \n888        888  Y8888   888  888  Y888                                     \nThe first pip client. Made by barker.rowan@sugarsalem.com")
+    effect.effect_config.final_gradient_stops = (Color("ffffff"), Color("ffffff"), Color("ffffff"))
+    with effect.terminal_output() as terminal:
+        for frame in effect:
+            terminal.print(frame)
+
+def PrintEffect():
+    effect = Print("8888888b.  d8b                   888                                       \n888   Y88b Y8P                   888            ))                         \n888    888                       888           (o>  //                     \n888   d88P 888  .d88b.  88888b.  888888        / \ <o)                     \n8888888P   888 d8P  Y8b 888  88b 888        ___\_v_())__                   \n888        888 88888888 888  888 888            || ||                      \n888        888 Y8b.     888  888 Y88b.          ||                         \n888        888  Y8888   888  888  Y888                                     \nThe first pip client. Made by barker.rowan@sugarsalem.com")
+    effect.effect_config.final_gradient_stops = (Color("ffffff"), Color("ffffff"), Color("ffffff"))
+    with effect.terminal_output() as terminal:
+        for frame in effect:
+            terminal.print(frame)
+
+def FireworksEffect():
+    effect = Fireworks("8888888b.  d8b                   888                                       \n888   Y88b Y8P                   888            ))                         \n888    888                       888           (o>  //                     \n888   d88P 888  .d88b.  88888b.  888888        / \ <o)                     \n8888888P   888 d8P  Y8b 888  88b 888        ___\_v_())__                   \n888        888 88888888 888  888 888            || ||                      \n888        888 Y8b.     888  888 Y88b.          ||                         \n888        888  Y8888   888  888  Y888                                     \nThe first pip client. Made by barker.rowan@sugarsalem.com")
+    effect.effect_config.final_gradient_stops = (Color("ffffff"), Color("ffffff"), Color("ffffff"))
+    effect.effect_config.firework_volume = 0.15
+    with effect.terminal_output() as terminal:
+        for frame in effect:
+            terminal.print(frame)
+
+def SlideEffect():
+    effect = Slide("8888888b.  d8b                   888                                       \n888   Y88b Y8P                   888            ))                         \n888    888                       888           (o>  //                     \n888   d88P 888  .d88b.  88888b.  888888        / \ <o)                     \n8888888P   888 d8P  Y8b 888  88b 888        ___\_v_())__                   \n888        888 88888888 888  888 888            || ||                      \n888        888 Y8b.     888  888 Y88b.          ||                         \n888        888  Y8888   888  888  Y888                                     \nThe first pip client. Made by barker.rowan@sugarsalem.com")
+    effect.effect_config.final_gradient_stops = (Color("ffffff"), Color("ffffff"), Color("ffffff"))
+    effect.effect_config.merge = True
+    with effect.terminal_output() as terminal:
+        for frame in effect:
+            terminal.print(frame)
+
+def SynthGridEffect():
+    effect = SynthGrid("8888888b.  d8b                   888                                       \n888   Y88b Y8P                   888            ))                         \n888    888                       888           (o>  //                     \n888   d88P 888  .d88b.  88888b.  888888        / \ <o)                     \n8888888P   888 d8P  Y8b 888  88b 888        ___\_v_())__                   \n888        888 88888888 888  888 888            || ||                      \n888        888 Y8b.     888  888 Y88b.          ||                         \n888        888  Y8888   888  888  Y888                                     \nThe first pip client. Made by barker.rowan@sugarsalem.com")
+    effect.effect_config.text_gradient_stops = (Color("ffffff"), Color("ffffff"), Color("ffffff"))
+    with effect.terminal_output() as terminal:
+        for frame in effect:
+            terminal.print(frame)
+
+def ErrorCorrectEffect():
+    effect = ErrorCorrect("8888888b.  d8b                   888                                       \n888   Y88b Y8P                   888            ))                         \n888    888                       888           (o>  //                     \n888   d88P 888  .d88b.  88888b.  888888        / \ <o)                     \n8888888P   888 d8P  Y8b 888  88b 888        ___\_v_())__                   \n888        888 88888888 888  888 888            || ||                      \n888        888 Y8b.     888  888 Y88b.          ||                         \n888        888  Y8888   888  888  Y888                                     \nThe first pip client. Made by barker.rowan@sugarsalem.com")
+    effect.effect_config.final_gradient_stops = (Color("ffffff"), Color("ffffff"), Color("ffffff"))
+    with effect.terminal_output() as terminal:
+        for frame in effect:
+            terminal.print(frame)
+
+def printlogo():
+    logo = random.randint(1,6)
+
+    if logo == 1:
+        MiddleOutEffect()
+    elif logo == 2:
+        PrintEffect()
+    elif logo == 3:
+        FireworksEffect()
+    elif logo == 4:
+        SlideEffect()
+    elif logo == 5:
+        SynthGridEffect()
+    elif logo == 6:
+        ErrorCorrectEffect()
 
 def theme():
     configfile = "config.ini"
@@ -40,8 +109,6 @@ def theme():
             if choice < 1 or choice > 6:
                 raise ValueError
         except ValueError:
-            print("Invalid choice. Please enter a number between 1 and 6.")
-            time.sleep(1)
             theme()
 
         if choice == 1:
@@ -120,16 +187,15 @@ def settings():
     print(color + "2. Update pip" + end)
     print(color + "3. Update all packages" + end)
     print(color + "4. Change Startup Page" + end)
-    print(color + "5. Back" + end)
+    print(color + "5. Show Random Startup Animation" + end)
+    print(color + "6. Back" + end)
     n()
     choice = input(color + "Enter your choice: " + end)
     try:
         choice = int(choice)
-        if choice < 1 or choice > 5:
+        if choice < 1 or choice > 6:
             raise ValueError
     except ValueError:
-        print("Invalid choice. Please enter a number between 1 and 5.")
-        time.sleep(1)
         settings()
 
     if choice == 1:
@@ -230,21 +296,39 @@ def settings():
             open(config_file, "w") 
 
     elif choice == 5:
-        main()   
+        clear()
+        printlogo()
+        clear()
+        settings()
 
+    elif choice == 6:
+        clear()
+        n()
+        print("8888888b.  d8b                   888                                       \n888   Y88b Y8P                   888            ))                         \n888    888                       888           (o>  //                     \n888   d88P 888  .d88b.  88888b.  888888        / \ <o)                     \n8888888P   888 d8P  Y8b 888  88b 888        ___\_v_())__                   \n888        888 88888888 888  888 888            || ||                      \n888        888 Y8b.     888  888 Y88b.          ||                         \n888        888  Y8888   888  888  Y888                                     \nThe first pip client. Made by barker.rowan@sugarsalem.com")
+        n()
+        function()
+           
 def install():
     clear()
     print(color + "Install Package" + end)
     n()
     package = input(color + "Enter package name (type 'back' to exit) : " + end)
     if package == "back":
-        main()
+        clear()
+        print("8888888b.  d8b                   888                                       \n888   Y88b Y8P                   888            ))                         \n888    888                       888           (o>  //                     \n888   d88P 888  .d88b.  88888b.  888888        / \ <o)                     \n8888888P   888 d8P  Y8b 888  88b 888        ___\_v_())__                   \n888        888 88888888 888  888 888            || ||                      \n888        888 Y8b.     888  888 Y88b.          ||                         \n888        888  Y8888   888  888  Y888                                     \nThe first pip client. Made by barker.rowan@sugarsalem.com")
+        n()
+        function()
+        n()
     os.system(f"pip install {package} --user")
     clear()
     n()
     print(color + "Package installed successfully!" + end)
     time.sleep(1)
-    main()
+    clear()
+    print("8888888b.  d8b                   888                                       \n888   Y88b Y8P                   888            ))                         \n888    888                       888           (o>  //                     \n888   d88P 888  .d88b.  88888b.  888888        / \ <o)                     \n8888888P   888 d8P  Y8b 888  88b 888        ___\_v_())__                   \n888        888 88888888 888  888 888            || ||                      \n888        888 Y8b.     888  888 Y88b.          ||                         \n888        888  Y8888   888  888  Y888                                     \nThe first pip client. Made by barker.rowan@sugarsalem.com")
+    n()
+    function()
+    n()
 
 def remove():
     clear()
@@ -252,13 +336,21 @@ def remove():
     n()
     package = input(color + "Enter package name (type 'back' to exit) : " + end)
     if package == "back":
-        main()
+        clear()
+        print("8888888b.  d8b                   888                                       \n888   Y88b Y8P                   888            ))                         \n888    888                       888           (o>  //                     \n888   d88P 888  .d88b.  88888b.  888888        / \ <o)                     \n8888888P   888 d8P  Y8b 888  88b 888        ___\_v_())__                   \n888        888 88888888 888  888 888            || ||                      \n888        888 Y8b.     888  888 Y88b.          ||                         \n888        888  Y8888   888  888  Y888                                     \nThe first pip client. Made by barker.rowan@sugarsalem.com")
+        n()
+        function()
+        n()
     os.system(f"pip uninstall {package}")
     clear()
     n()
     print(color + "Package removed successfully!" + end)
     time.sleep(1)
-    main()
+    clear()
+    print("8888888b.  d8b                   888                                       \n888   Y88b Y8P                   888            ))                         \n888    888                       888           (o>  //                     \n888   d88P 888  .d88b.  88888b.  888888        / \ <o)                     \n8888888P   888 d8P  Y8b 888  88b 888        ___\_v_())__                   \n888        888 88888888 888  888 888            || ||                      \n888        888 Y8b.     888  888 Y88b.          ||                         \n888        888  Y8888   888  888  Y888                                     \nThe first pip client. Made by barker.rowan@sugarsalem.com")
+    n()
+    function()
+    n()
 
 def listpackages():
     clear()
@@ -267,22 +359,13 @@ def listpackages():
     os.system("pip list")
     n()
     input(color + "Press Enter to continue..." + end)
-    main()
-
-def main():
     clear()
-    print(color + 
-"8888888b.  d8b                   888                                       \n"
-"888   Y88b Y8P                   888            ))                         \n"
-"888    888                       888           (o>  //                     \n"
-"888   d88P 888  .d88b.  88888b.  888888        / \ <o)                     \n"
-"8888888P   888 d8P  Y8b 888  88b 888        ___\_v_())__                   \n"
-"888        888 88888888 888  888 888            || ||                      \n"
-"888        888 Y8b.     888  888 Y88b.          ||                         \n"
-"888        888  Y8888   888  888  Y888                                     \n" + end)
-
-    print(color + "The first pip client. Made by barker.rowan@sugarsalem.com" + end)
+    print("8888888b.  d8b                   888                                       \n888   Y88b Y8P                   888            ))                         \n888    888                       888           (o>  //                     \n888   d88P 888  .d88b.  88888b.  888888        / \ <o)                     \n8888888P   888 d8P  Y8b 888  88b 888        ___\_v_())__                   \n888        888 88888888 888  888 888            || ||                      \n888        888 Y8b.     888  888 Y88b.          ||                         \n888        888  Y8888   888  888  Y888                                     \nThe first pip client. Made by barker.rowan@sugarsalem.com")
     n()
+    function()
+    n()
+
+def function():
     print(color + "1. Install Package" + end)
     print(color + "2. Remove Package" + end)
     print(color + "3. List Packages" + end)
@@ -295,9 +378,11 @@ def main():
         if choice < 1 or choice > 5:
             raise ValueError
     except ValueError:
-        print("Invalid choice. Please enter a number between 1 and 5.")
-        time.sleep(1)
-        main()
+        clear()
+        print("8888888b.  d8b                   888                                       \n888   Y88b Y8P                   888            ))                         \n888    888                       888           (o>  //                     \n888   d88P 888  .d88b.  88888b.  888888        / \ <o)                     \n8888888P   888 d8P  Y8b 888  88b 888        ___\_v_())__                   \n888        888 88888888 888  888 888            || ||                      \n888        888 Y8b.     888  888 Y88b.          ||                         \n888        888  Y8888   888  888  Y888                                     \nThe first pip client. Made by barker.rowan@sugarsalem.com")
+        n()
+        function()
+        n()
 
     if choice == 1:
         install()
@@ -317,6 +402,12 @@ def main():
         n()
         time.sleep(1)
         sys.exit()
+
+def main():
+    clear()
+    printlogo()
+    n()
+    function()
 
 clear()
 print("Initializing...")
