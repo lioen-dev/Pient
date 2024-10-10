@@ -1,7 +1,12 @@
-# Pient
+<div align="center">
+   <img src="https://lioen.xyz/img/pient.png">
+   <h1>
+      Pient
+   </h1>
+   Pient is a CLI based pip client with customizable features, a fast and simple ui, and blazing speed!
+</div>
+<br>
 
-## Description
-Pient is a CLI based pip client with customizable features, a fast and simple ui, and blazing speed!
 
 ## Features
 - Installation and Deletion of Python packages
